@@ -1,0 +1,49 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile, token balance, and active subscription plan",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Firebase Auth UID" },
+        "email": { "type": "string", "description": "User Google email address" },
+        "displayName": { "type": "string", "description": "Display name" },
+        "photoURL": { "type": "string", "description": "User avatar image URL" },
+        "plan": { "type": "string", "enum": ["free", "creator_pro", "studio_ultra"], "description": "Active subscription plan" },
+        "tokens": { "type": "number", "description": "Available token balance" },
+        "totalTokensUsed": { "type": "number", "description": "Lifetime tokens used" },
+        "operationsCount": { "type": "number", "description": "Total tool operations performed" },
+        "isAnonymous": { "type": "boolean", "description": "Whether user is anonymous or authenticated" },
+        "planExpiresAt": { "type": "number", "description": "Timestamp for subscription expiry" }
+      },
+      "required": ["uid", "email", "plan", "tokens"]
+    },
+    "UsageLog": {
+      "title": "UsageLog",
+      "description": "Log of token deductions and tool executions per user account",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "User UID who executed the action" },
+        "userEmail": { "type": "string", "description": "Account email address" },
+        "tool": { "type": "string", "description": "Identifier of the tool used" },
+        "title": { "type": "string", "description": "Action title" },
+        "tokensDeducted": { "type": "number", "description": "Amount of tokens consumed" },
+        "tokensRemaining": { "type": "number", "description": "Token balance after deduction" },
+        "timestamp": { "type": "number", "description": "Unix timestamp in milliseconds" },
+        "summary": { "type": "string", "description": "Brief description of the operation result" },
+        "status": { "type": "string", "enum": ["success", "failed"], "description": "Operation status" }
+      },
+      "required": ["userId", "tool", "tokensDeducted", "timestamp"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profile with token balance and plan details"
+    },
+    "/usage_logs/{logId}": {
+      "schema": "UsageLog",
+      "description": "Token transaction and tool execution log"
+    }
+  }
+}

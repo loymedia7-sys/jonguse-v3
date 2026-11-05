@@ -1,0 +1,33 @@
+{
+  "name": "JongUse - Khmer Video Subtitle & AI Creator Studio",
+  "short_name": "JongUse",
+  "description": "បង្កើតអក្សររត់លើវីដេអូ Khmer Subtitles, AI Audio Transcription, និងឧបករណ៍ AI ឆ្លាតវៃ",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0d14",
+  "theme_color": "#f59e0b",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

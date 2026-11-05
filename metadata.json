@@ -1,0 +1,11 @@
+{
+  "name": "Remix Remix ចង់ប្រើ (Jong Use)",
+  "description": "Essential utility suite for Khmer \u0026 English: Auto Subtitle SRT generation, video subtitle styler with Khmer fonts (Battambang, Koulen, Bayon), Document OCR, custom QR codes, and TTS voice synthesis.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
